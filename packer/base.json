@@ -1,14 +1,14 @@
 {
   "variables": {
     "region": "us-east-1",
-    "source_ami": "ami-66506c1c",
-    "instance_type": "t2.micro",
-    "ssh_username": "ubuntu"
+    "source_ami": "ami-afd15ed0",
+    "instance_type": "t2.medium",
+    "ssh_username": "ec2-user"
   },
   "builders": [
     {
-      "ami_name": "Xenial 16.04 - Java",
-      "ami_description": "An Ubuntu AMI that comes with Java pre-installed.",
+      "ami_name": "Amazon Linux  - WP2",
+      "ami_description": "An Amazon Linux AMI that is supposed to be a Golden AMI",
       "instance_type": "{{user `instance_type`}}",
       "region": "{{user `region`}}",
       "type": "amazon-ebs",
@@ -27,23 +27,23 @@
         "most_recent": true
       },
       "tags": {
-        "Name": "Ubuntu-Java",
+        "Name": "RHEL-WP",
         "CreationDate": "{{timestamp}}",
         "Builder": "Packer",
-        "OS_Version": "Ubuntu",
-        "Release": "Xenial 16.04"
+        "OS_Version": "RHEL",
+        "Release": "Amazon Linux"
       }
     }
   ],
   "provisioners": [
     {
       "type": "shell",
-      "script": "scripts/bootstrap"
+      "script": "./packer/scripts/bootstrap"
     },
     {
       "type": "ansible-local",
-      "playbook_file": "ansible/play.yml",
-      "playbook_dir": "ansible"
+      "playbook_file": "./ansible/play.yml",
+      "playbook_dir": "./ansible"
     }
   ]
 }

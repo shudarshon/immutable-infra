@@ -1,9 +1,6 @@
 #!/bin/bash
 sudo sleep 30
-sudo apt-get update -y
-sudo apt-get install python-dev python-pip -y
-sudo pip install --upgrade pip
-sudo pip install --upgrade ansible
-sudo pip install --upgrade awscli
-sudo timedatectl set-timezone Asia/Dhaka
-sudo localectl set-locale LANG=en_US.utf8
+sudo yum update -y
+sudo yum install python-setuptools python-pip -y
+sudo pip install httplib2
+sudo pip install ansible
