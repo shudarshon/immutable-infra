@@ -1,5 +1,5 @@
 aws_profile		              = "superhero"
-aws_region		              = "us-east-1"
+aws_region		              =  "us-east-1"
 
 vpc_cidr                    = "10.0.0.0/16"
 cidrs			                  = {
@@ -25,10 +25,10 @@ rds_subnet_group_name  = "rds-subnet"
 instance_name          = "dev-instance"
 instance_type          = "t2.medium"
 instance_count         = 1
-ami_id                 = "ami-f5eb848a"
+ami_id                 = "ami-62177e1d"
 
 localip                = "103.216.59.97/32"
-ssh_user_name          =
+ssh_user_name          = "ec2-user"
 ssh_key_name 		       = "id_rsa"
 ssh_key_path           = "/home/chaks/.ssh/id_rsa"
 public_key_path 	     = "/home/chaks/.ssh/id_rsa.pub"
