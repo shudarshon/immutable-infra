@@ -10,11 +10,6 @@ pipeline {
         sendNotifications 'STARTED'
       }
     }
-    stage('Backup') {
-      steps {
-         sh 'make backup'
-      }
-    }
     stage('Validate') {
       steps {
          sh 'make validate'
@@ -25,9 +20,9 @@ pipeline {
          sh 'make build'
       }
     }
-    stage('Test') {
+    stage('Initialize') {
       steps {
-         sh 'make test'
+         sh 'make initialize'
       }
     }
     stage('Apply') {

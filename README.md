@@ -16,3 +16,5 @@ This repository contains some infrastructure as code for deploying app in a immu
 * Make sure that you always put `*.tfvars` file in .gitignore.
 
 * New git push will invoke jenkins to perform blue green deployment of immutable infrastructure.
+
+* In my example, I created the jenkins pipeline named `Blue-Green`.
