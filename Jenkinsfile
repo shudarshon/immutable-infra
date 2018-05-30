@@ -1,6 +1,3 @@
-#!/usr/bin/env groovy
-@Library('slack-shared@master') _
-
 pipeline {
   agent any
 
