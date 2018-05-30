@@ -3,5 +3,5 @@ output "db-endpoint" {
 }
 
 output "elb-endpoint" {
-  value = "${aws_elb.WebAppELB}" 
+  value = "${aws_elb.WebAppELB.dns_name}" 
 }
