@@ -29,8 +29,8 @@ ami_id                 = "ami-e1523b9e"
 localip                = "103.216.59.97/32"
 ssh_user_name          = "ec2-user"
 ssh_key_name 		       = "id_rsa"
-ssh_key_path           = "/home/chaks/.ssh/id_rsa"
-public_key_path 	     = "/home/chaks/.ssh/id_rsa.pub"
+ssh_key_path           = "/var/lib/jenkins/.ssh/id_rsa"
+public_key_path 	     = "/var/lib/jenkins/.ssh/id_rsa.pub"
 
 domain_name		= "devopslab"
 

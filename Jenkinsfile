@@ -7,6 +7,11 @@ pipeline {
         sendNotifications 'STARTED'
       }
     }
+    stage('Initialize') {
+      steps {
+         sh 'make initialize'
+      }
+    }
     stage('Validate') {
       steps {
          sh 'make validate'
@@ -16,12 +21,7 @@ pipeline {
       steps {
          sh 'make build'
       }
-    }
-    stage('Initialize') {
-      steps {
-         sh 'make initialize'
-      }
-    }
+    }    
     stage('Apply') {
       steps {
          sh 'make apply'
