@@ -25,7 +25,7 @@ rds_subnet_group_name  = "rds-subnet"
 instance_name          = "dev-instance"
 instance_type          = "t2.medium"
 instance_count         = 1
-ami_id                 = "ami-62177e1d"
+ami_id                 = "ami-0b711874"
 
 localip                = "103.216.59.97/32"
 ssh_user_name          = "ec2-user"

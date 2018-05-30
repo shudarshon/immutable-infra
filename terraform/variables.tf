@@ -15,7 +15,6 @@ variable "instance_name" {}
 variable "instance_type" {}
 variable "instance_count" {}
 variable "ami_id" {}
-variable "dev_host_label" {}
 
 variable "localip" {}
 variable "ssh_user_name" {}
@@ -42,4 +41,3 @@ variable "asg_hct" {}
 variable "asg_cap" {}
 
 variable "asg_instance_type" {}
-variable "delegation_set" {}

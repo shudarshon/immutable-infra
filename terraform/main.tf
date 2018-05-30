@@ -13,7 +13,6 @@ resource "aws_instance" "DevInstanceAWS" {
   count         = "${var.instance_count}"
   instance_type = "${var.instance_type}"
   ami           = "${var.ami_id}"
-  iam_instance_profile   = "${aws_iam_instance_profile.s3_access_profile.id}"
   tags {
     Name = "wp_dev"
   }

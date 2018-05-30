@@ -3,6 +3,7 @@ backup:
 
 validate:
 	packer validate -var-file=./packer/secret.json ./packer/base.json
+	cd ./terraform && terraform validate
 
 build:
 	packer build -machine-readable -var-file=./packer/secret.json ./packer/base.json | tee ./build.log
@@ -16,8 +17,11 @@ build:
 	#ssh_username=`grep 'ssh_username' ./packer/base.json | cut -d: -f2 | head -n 1 | tr -d ' '`
 	sed -i -e "/ssh_user_name/ s/= .*/= `grep 'ssh_username' ./packer/base.json | cut -d: -f2 | head -n 1 | tr -d ' '`/" ./terraform/terraform.tfvars
 
-test:
-	echo ""
+initialize:
+	cd ./terraform && terraform init
 
 apply:
-	echo ""
+	cd ./terraform && terraform apply -auto-approve
+
+destroy:
+	cd ./terraform && terraform destroy -auto-approve

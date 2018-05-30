@@ -7,7 +7,7 @@
   },
   "builders": [
     {
-      "ami_name": "Amazon Linux  - WP2",
+      "ami_name": "Amazon Linux  - WP2 {{timestamp}}",
       "ami_description": "An Amazon Linux AMI that is supposed to be a Golden AMI",
       "instance_type": "{{user `instance_type`}}",
       "region": "{{user `region`}}",
@@ -27,7 +27,7 @@
         "most_recent": true
       },
       "tags": {
-        "Name": "RHEL-WP",
+        "Name": "RHEL-WP - {{timestamp}}",
         "CreationDate": "{{timestamp}}",
         "Builder": "Packer",
         "OS_Version": "RHEL",
