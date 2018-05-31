@@ -7,7 +7,7 @@ This repository contains some infrastructure as code for deploying app in a immu
   `export AWS_ACCESS_KEY_ID="anaccesskey"
    export AWS_SECRET_ACCESS_KEY="asecretkey"`
 
-* Make sure terraform, packer, maketool is installed.
+* Make sure terraform, packer, maketool is installed in Jenkins.
 
 * Set "region", "source_ami", "instance_type", "ssh_username" value in packer/base.json file.
 
