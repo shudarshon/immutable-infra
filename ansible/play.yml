@@ -6,3 +6,4 @@
   roles:
     - java8
     - tomcat
+    - nginx
