@@ -1,6 +1,6 @@
 # About
 
-Ansible role for tomcat setup. Supported OS:
+Ansible role for oracle java 8 setup. Supported OS:
 
 * Ubuntu/Debian
 * RedHat/CentOS
