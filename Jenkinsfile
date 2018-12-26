@@ -4,7 +4,7 @@ pipeline {
   stages {
     stage('Initialize') {
       steps {
-         sh 'make initialize'
+         sh 'make init'
       }
     }
     stage('Validate') {
@@ -22,5 +22,5 @@ pipeline {
          sh 'make apply'
       }
     }
-  }  
+  }
 }
