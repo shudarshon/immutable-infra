@@ -7,7 +7,7 @@ This repository contains some infrastructure as code for deploying app in a immu
   `export AWS_ACCESS_KEY_ID="anaccesskey"
    export AWS_SECRET_ACCESS_KEY="asecretkey"`
 
-* Make sure terraform, packer, maketool is installed in Jenkins.
+* Make sure terraform, packer, make tool is installed in Jenkins.
 
 * Set "region", "source_ami", "instance_type", "ssh_username" value in packer/base.json file.
 
@@ -17,10 +17,8 @@ This repository contains some infrastructure as code for deploying app in a immu
 
 * New git push will invoke jenkins to perform blue green deployment of immutable infrastructure.
 
-* In my example, I created the jenkins pipeline named `Blue-Green`.
-
 * Supported OS for instances are:
 
-    * Debian/Ubuntu
+    * Debian/Ubuntu (packer AMI needed to be changed)
     * RHEL/CentOS
     * Amazon Linux AMI
