@@ -1,6 +1,37 @@
-#!/bin/bash
-sudo sleep 30
-sudo yum update -y
-sudo yum install python-setuptools python-pip -y
-sudo pip install httplib2
-sudo pip install ansible
+#!/bin/bash -x
+
+###
+# this script automatically installs codedeploy agent and awscli with other essential tools in the prebaked ami.
+###
+
+### install ansible, awscli
+install_ansible_awscli() {
+	sudo pip install ansible
+	sudo pip install httplib2
+	sudo pip install awscli
+}
+
+### install codedeploy agent
+install_codedeploy_agent() {
+	REGION=$(curl 169.254.169.254/latest/meta-data/placement/availability-zone/ | sed 's/[a-z]$//')
+	sudo wget https://aws-codedeploy-$REGION.s3.amazonaws.com/latest/install
+	sudo chmod +x ./install
+	sudo ./install auto
+	sudo service codedeploy-agent enable
+	sudo service codedeploy-agent start
+}
+
+if [[ $(grep -w ID /etc/os-release | cut -d \= -f2) == [Uu][Bb][Uu][Nn][Tt][Uu] ]]
+then
+	sudo sleep 30
+	sudo apt-get update -y
+	sudo apt-get install curl ruby wget python-pip unzip -y
+elif [[ $(grep -w ID /etc/os-release | cut -d \" -f2) == [Aa][Mm][Zz][Nn] ]]
+then
+  sudo sleep 30
+	sudo yum update -y
+	sudo yum install curl ruby wget python-pip unzip -y
+fi
+
+install_ansible_awscli
+install_codedeploy_agent
