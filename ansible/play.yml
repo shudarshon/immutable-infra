@@ -4,6 +4,4 @@
   become: yes
   become_method: sudo
   roles:
-    - java8
     - tomcat
-    - nginx
