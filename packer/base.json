@@ -45,9 +45,7 @@
       "playbook_file": "./ansible/play.yml",
       "playbook_dir": "./ansible",
       "role_paths": [
-        "./ansible/roles/java8",
-        "./ansible/roles/tomcat",
-        "./ansible/roles/nginx"
+        "./ansible/roles/tomcat"
       ]
     }
   ]
